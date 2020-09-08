@@ -53,7 +53,7 @@ block="server {
     $rewritesTXT
 
     location / {
-        try_files \$uri /framework/main.php?url=\$uri&\$query_string
+        try_files \$uri /framework/main.php?url=\$uri&\$query_string;
         $headersTXT
     }
 
@@ -68,7 +68,7 @@ block="server {
         location ~ /\. {
             deny all;
         }
-        try_files \$uri /index.php?url=\$uri&\$query_string;
+        try_files \$uri /framework/main.php?url=\$uri&\$query_string;
         $headersTXT
     }
 
