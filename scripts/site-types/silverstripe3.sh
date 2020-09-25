@@ -77,12 +77,13 @@ block="server {
         fastcgi_pass   unix:/var/run/php/php$5-fpm.sock;
         fastcgi_index  index.php;
         fastcgi_param  SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
+        fastcgi_param  PHP_VALUE \"memory_limit=1G \n max_execution_time=18000\";
         include        fastcgi_params;
         $paramsTXT
         fastcgi_intercept_errors off;
-        fastcgi_buffer_size 128k;
-        fastcgi_buffers 8 128k;
-        fastcgi_busy_buffers_size 256k;
+        fastcgi_buffer_size 256k;
+        fastcgi_buffers 8 256k;
+        fastcgi_busy_buffers_size 512k;
         fastcgi_connect_timeout 900;
         fastcgi_send_timeout 900;
         fastcgi_read_timeout 900;
@@ -131,11 +132,12 @@ block="server {
         fastcgi_pass   unix:/var/run/php/php$5-fpm.sock;
         fastcgi_index  index.php;
         fastcgi_param  SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
+        fastcgi_param  PHP_VALUE \"memory_limit=1G \n max_execution_time=18000\";
         include        fastcgi_params;
         $paramsTXT
-        fastcgi_buffer_size 128k;
-        fastcgi_buffers 8 128k;
-        fastcgi_busy_buffers_size 256k;
+        fastcgi_buffer_size 256k;
+        fastcgi_buffers 8 256k;
+        fastcgi_busy_buffers_size 512k;
         fastcgi_connect_timeout 900;
         fastcgi_send_timeout 900;
         fastcgi_read_timeout 900;
